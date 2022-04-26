@@ -1,13 +1,15 @@
+require('dotenv').config();
 var MongoClient = require('mongodb').MongoClient;
 var faker = require("faker");
- 
-const uri = "mongodb://oeuser3:321ToughJob^@128.199.195.92:27017/osc1?retryWrites=true&w=majority";
- 
+
+ const uri =  process.env.DB_URL
  
 let firstName = faker.name.firstName();
 let lastName = faker.name.lastName();
 
-console.log(`ewewewe: ${firstName} ${lastName}`);
+console.log(`TEST FAKER: ${firstName} ${lastName}`);
+
+console.log(process.env.USER_ID + uri);
 
  
 // MongoClient.connect(uri, function(err, db) {
